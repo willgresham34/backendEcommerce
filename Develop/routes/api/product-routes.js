@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       ],
     });
     res.status(200).json(prodData);
-  } catch {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
       return;
     }
     res.status(200).json(prodData);
-  } catch {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -117,6 +117,13 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   // delete one product by its `id` value
+  try {
+    const deleteProd = await Product.destroy({
+      where: { id: req.params.id },
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
