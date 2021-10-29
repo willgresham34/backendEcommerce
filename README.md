@@ -23,6 +23,10 @@ Dotenv, Express, MySQL2, and Sequalize
 
 ![header image](./images/preview.png)
 
+## Demo
+
+[![Demo Img](./images/youtube.png)](https://youtu.be/qpR6Cedl5Bw)
+
 ## License
 
 [![License](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)
